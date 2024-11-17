@@ -7,6 +7,7 @@ import { Group, Scene, Texture, Mesh, VideoTexture } from 'three';
 import { velocity, direction, moveForward, moveBackward, moveLeft, moveRight } from './controls';
 import * as backgroundmodule from "./background"
 import { Reflector } from 'three/examples/jsm/objects/Reflector.js';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
 // Initialize RectAreaLightUniformsLib (necessary for RectAreaLight)
 RectAreaLightUniformsLib.init();
@@ -119,7 +120,9 @@ loadingManager.onError = function (url) {
 const textureLoader = new THREE.TextureLoader(loadingManager);
 const gltfLoader = new GLTFLoader(loadingManager);
 
-
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('/src/decoder.js');
+gltfLoader.setDRACOLoader(dracoLoader);
 // === Define BlinkingLight Class ===
 
 // Define a BlinkingLight class for better management
