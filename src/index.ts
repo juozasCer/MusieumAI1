@@ -256,6 +256,7 @@ function applyVideoMaterial(model: Group | Scene, meshName: string, videoURL: st
 
   // Wait for the video to be ready to play
   video.addEventListener('canplaythrough', () => {
+    console.log(`Video ${videoURL} is ready to play.`);
     video.play();
 
     // Create a VideoTexture
@@ -350,7 +351,7 @@ function light() {
 // LOAD MODEL FUNCTION
 function loadModel() {
   gltfLoader.load(
-    './models/MAP430.glb',
+    './models/mao.glb',
     (gltf) => {
       const model = gltf.scene;
       model.position.set(0, 0, 0);
@@ -371,8 +372,8 @@ function loadModel() {
       model.traverse((child) => {
         if (child instanceof Mesh) {
           // console.log(child.name); // Log each mesh name
-          if (child.name === "BSurfaceMesh002") { // Example: Apply red material to "Text010"
-            // child.material = new THREE.MeshBasicMaterial({ color: 0xff0000,transparent:true,opacity:1 }); // Red color for testing
+          if (child.name === "Object_0010_1") { // Example: Apply red material to "Text010"
+            child.material = new THREE.MeshBasicMaterial({ color: 0xff0000,transparent:true,opacity:1 }); // Red color for testing
             // child.position.set(0, -0.1, 0.5); 
           }
         }
