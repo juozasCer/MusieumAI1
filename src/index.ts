@@ -367,13 +367,13 @@ function loadModel() {
 
       // Apply video material to specific meshes
       applyVideoMaterial(model, 'Screenshot_2024-11-14_125839', '/media/video.mp4');
-      applyVideoMaterial(model, 'Object_0010_1', '/media/act.mp4');
+      applyVideoMaterial(model, 'Object_0131_1', '/media/act.mp4');
 
       model.traverse((child) => {
         if (child instanceof Mesh) {
           // console.log(child.name); // Log each mesh name
-          if (child.name === "Object_0010_1") { // Example: Apply red material to "Text010"
-            child.material = new THREE.MeshBasicMaterial({ color: 0xff0000,transparent:true,opacity:1 }); // Red color for testing
+          if (child.name === "Object_0131_1") { // Example: Apply red material to "Text010"
+            // child.material = new THREE.MeshBasicMaterial({ color: 0xff0000,transparent:true,opacity:1 }); // Red color for testing
             // child.position.set(0, -0.1, 0.5); 
           }
         }
