@@ -1,0 +1,32 @@
+{
+  "headers": [
+    {
+      "source": "/models/(.*)", 
+      "headers": [
+        { "key": "Content-Type", "value": "application/octet-stream" } 
+      ]
+    },
+    {
+      "source": "/textures/(.*)", 
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/models/(.*)", 
+      "dest": "/models/$1"
+    },
+    {
+      "src": "/textures/(.*)", 
+      "dest": "/textures/$1"
+    },
+    {
+      "src": "/(.*)", 
+      "dest": "/index.html"
+    }
+  ],
+  "cleanUrls": true, 
+  "trailingSlash": false 
+}
