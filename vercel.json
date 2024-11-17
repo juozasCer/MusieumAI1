@@ -1,0 +1,20 @@
+{
+  "headers": [
+    {
+      "source": "/models/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "application/octet-stream" }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/models/(.*)",
+      "dest": "/models/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
