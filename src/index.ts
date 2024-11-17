@@ -350,7 +350,7 @@ function light() {
 // LOAD MODEL FUNCTION
 function loadModel() {
   gltfLoader.load(
-    './models/MAP11.glb',
+    './models/map.glb',
     (gltf) => {
       const model = gltf.scene;
       model.position.set(0, 0, 0);
