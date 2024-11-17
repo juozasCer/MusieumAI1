@@ -121,7 +121,7 @@ const textureLoader = new THREE.TextureLoader(loadingManager);
 const gltfLoader = new GLTFLoader(loadingManager);
 
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('/src');
+dracoLoader.setDecoderPath('/libs/draco/');
 gltfLoader.setDRACOLoader(dracoLoader);
 // === Define BlinkingLight Class ===
 
